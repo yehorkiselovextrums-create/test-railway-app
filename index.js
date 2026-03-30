@@ -4,5 +4,5 @@ const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods
 http.createServer((req, res) => {
   if (req.method === "OPTIONS") { res.writeHead(204, CORS); res.end(); return; }
   res.writeHead(200, { ...CORS, "Content-Type": "application/json" });
-  res.end(JSON.stringify({ status: "ok", version: "v2", message: "Updated via push+deploy!", time: new Date().toISOString() }));
+  res.end(JSON.stringify({ status: "ok", version: "v3", message: "Push+Deploy with commitSha works!", time: new Date().toISOString() }));
 }).listen(port, () => console.log("Listening on port " + port));
